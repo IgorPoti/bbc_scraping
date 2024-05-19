@@ -1,8 +1,10 @@
+import os
+
 from google.cloud import bigquery
 from google.api_core.exceptions import BadRequest
 from fastapi import FastAPI, Query
 from dotenv import load_dotenv
-import os
+
 
 load_dotenv()
 app = FastAPI()
@@ -14,7 +16,7 @@ credentials_path = os.getenv("GOOGLE_ACESS")
 @app.get("/")
 async def get_all_articles():
     client = bigquery.Client.from_service_account_json(json_credentials_path=credentials_path)
-    job = client.query('select * from bbc_news_scrap.articles')
+    job = client.query('select * from bbc_news_scrap.articles LIMIT 100')
     
     results = job.result()
     return [dict(row) for row in results]
@@ -30,9 +32,10 @@ async def get_articles_by_tags(search: str = Query('brasil')):
         WHERE LOWER(@search) IN (
             SELECT LOWER(tag) FROM UNNEST(list_tags) AS tag
         )
+        LIMIT 10;
     """
     
-    # Configura os parâmetros da consulta
+
     job_config = bigquery.QueryJobConfig(
         query_parameters=[
             bigquery.ScalarQueryParameter("search", "STRING", search.lower())
