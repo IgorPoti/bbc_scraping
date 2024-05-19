@@ -8,8 +8,7 @@ load_dotenv()
 app = FastAPI()
 
 
-# Obtém o caminho para o arquivo JSON de credenciais
-credentials_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+credentials_path = os.getenv("GOOGLE_ACESS")
 
 
 @app.get("/")

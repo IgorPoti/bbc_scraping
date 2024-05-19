@@ -16,7 +16,7 @@ class GetDataFromBBC:
     
     def __init__(self):
         load_dotenv()
-        credentials_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+        credentials_path = os.getenv("GOOGLE_ACESS")
         # Autenticação e configuração do cliente BigQuery
         self.client = bigquery.Client.from_service_account_json(credentials_path)
     
@@ -136,7 +136,7 @@ class GetDataFromBBC:
     def send_data_to_gcp(self, list_articles) -> None:
         
         project_id = '899333236152'
-        dataset_id = 'bbc_news_scrap'  # Use um dataset ID válido
+        dataset_id = 'bbc_news_scrap'  
         table_id = 'articles'
         table_ref = f"{project_id}.{dataset_id}.{table_id}"
 
