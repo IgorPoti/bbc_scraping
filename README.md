@@ -55,25 +55,26 @@ Com a extração iniciada, deverá visualizar as seguintes mensagens no seu term
 1. __Listagem de artigos__
 _Trará as listagens de artigos que passarão pelo processo de ETL_
 
-![Listagem](./resources/Captura_de_tela_2024-05-19_202752.png)
+![Descrição da Imagem](resources/Captura%20de%20tela%202024-05-19%20202752.png)
+
 
 
  2. __Extração/Tratamento__
 
  _Nesse processo ele já trará os dados úteis do artigo como texto do artigo e imagens referentes a ele, removendo as tags html desnecessárias_
 
-![Extração e Tratamento](./resources/Captura de tela 2024-05-19 214054.png)
+![Extração e Tratamento](./resources/Captura%20de%20tela%202024-05-19%20214054.png)
 
 3. __Carga para o GCP__
 _Nessa etapa já ocorrerá a validação se o artigo existe ou não, fazendo as tratativas necessárias para a carga_
 
-![Carga GCP](./resources/Captura de tela 2024-05-19 214305.png)
+![Carga GCP](./resources/Captura%20de%20tela%202024-05-19%20214305.png)
 
 Após todo o processo, deverá receber a mensagem de _Extração e envio de dados concluídos!_
 
 No BigQuery (GCP) deverá visualizar os dados já inseridos na tabela articles
 
-![BigQuery](./resources/Captura de tela 2024-05-19 214417.png)
+![BigQuery](./resources/Captura%20de%20tela%202024-05-19%20214417.png)
 
 ## Demonstração do uso da API
 
@@ -82,7 +83,7 @@ Para utilizar a API e consultar os dados no BigQuery, basta digitar o seguinte c
 ```bash
    uvicorn main:app --reload
 ```
-![Uvicorn iniciando](./resources/Captura de tela 2024-05-19 215059.png)
+![Uvicorn iniciando](./resources/Captura%20de%20tela%202024-05-19%20215059.png)
 
 Após a inicialização, deverá acessar os seguintes endpoints:
 
@@ -90,15 +91,15 @@ Após a inicialização, deverá acessar os seguintes endpoints:
 
 __Listando todos os artigos (max 100)__
 
-![Todos os artigos](./resources/Captura de tela 2024-05-19 211753.png)
+![Todos os artigos](./resources/Captura%20de%20tela%202024-05-19%20211753.png)
 
 __Listando artigos por palavra chave da noticia (list_tag)__
 
  "http://127.0.0.1:8000/articles?search=Rio Grande do Sul"
 
-![Artigos por search](./resources/Captura de tela 2024-05-19 211913.png)
+![Artigos por search](./resources/Captura%20de%20tela%202024-05-19%20211913.png)
 
 
 É fornecido a documentação da API acessando os endpoints /docs ou /redoc com o  OpenAPI
 
-![OpenAPI](./resources/Captura de tela 2024-05-19 210529.png)
+![OpenAPI](./resources/Captura%20de%20tela%202024-05-19%20210529.png)
