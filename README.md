@@ -9,7 +9,7 @@ Repositório referente ao web scraping do BBC News Brasil
 1. Baixando o repositório
 
 ```bash
-  git clone https://github.com/IgorPoti/bbc_scrap.git
+  git clone https://github.com/IgorPoti/bbc_scraping.git
 ```
 
 2. Criando o ambiente virtual
