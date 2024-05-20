@@ -43,9 +43,6 @@ _Para começar a extração, é importante que tenha colocado o caminho correto 
 
 Após todas as configurações iniciais, digite o seguinte comando para iniciar a raspagem:
 
-```bash
-   cd .\bbc_news\
-```
 
 ```bash
    python task_bbc
