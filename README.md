@@ -9,15 +9,21 @@ Repositório referente ao web scraping do BBC News Brasil
 1. Baixando o repositório
 
 ```bash
-  git clone https://github.com/IgorPoti/bbc_scrap.git
+  git clone https://github.com/IgorPoti/bbc_scraping.git
 ```
 
 2. Criando o ambiente virtual
 ```bash
   python -m venv venv
 ```
+3. Acessando o ambiente virtual
+```bash
+  .\venv\Scripts\Activate.ps1
+  ou
+  .\venv\Scripts\activate.bat
+```
 
-3. Instalando bibliotecas do projeto
+4. Instalando bibliotecas do projeto
 ```bash
   pip install -r requirements.txt
 ```
