@@ -4,12 +4,12 @@ from google.api_core.exceptions import NotFound
 
 def create_dataset_if_not_exists(client, dataset_id, project_id):
     try:
-        client.get_dataset(dataset_id)  
+        client.get_dataset(dataset_id)
         print(f'Dataset {dataset_id} já existe.')
     except NotFound:
         dataset = bigquery.Dataset(f"{project_id}.{dataset_id}")
         dataset.location = "southamerica-east1"
-        dataset = client.create_dataset(dataset) 
+        dataset = client.create_dataset(dataset)
         print(f'Dataset {dataset_id} criado.')
 
 
